@@ -130,17 +130,17 @@ h6 {
 }
 
 #header .logo h1 {
-  font-size: 28px;
+  font-size: 20px;
   margin: 0;
-  padding: 10px 0;
+  padding: 10px 5px;
   line-height: 1;
   font-weight: 400;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
-#header .logo h1 a,
-#header .logo h1 a:hover {
+#header .logo h5 a,
+#header .logo h5 a:hover {
   color: #2b2320;
   text-decoration: none;
 }
@@ -792,11 +792,11 @@ section {
 }
 
 .portfolio .portfolio-item .portfolio-info {
-  opacity: 0;
+  opacity: 0.9;
   position: absolute;
   left: 30px;
   right: 30px;
-  bottom: 0;
+  bottom: 10px;
   z-index: 3;
   transition: all ease-in-out 0.3s;
   background: rgba(255, 255, 255, 0.9);
