@@ -35,6 +35,16 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <script type="text/javascript">
+    var submitted = false;
+    function submitForm() {
+      submitted = true;
+      document.getElementById("contactForm").submit();
+      thisForm.querySelector('.sent-message').classList.add('d-block');
+      document.getElementById("contactForm").reset();
+    }
+  </script>
 </head>
 
 <body>
@@ -75,9 +85,11 @@
               </a>
             </h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="index.html">
-          <img src="assets/img/srl.png" alt="" class="img-fluid">
-        </a>
+        <h5>
+          <a href="index.html">
+            <img src="assets/img/srl.png" alt="" class="img-fluid" /> SevenHills Research Laboratories
+          </a>
+        </h5>
       </div>
 
       <nav id="navbar" class="navbar">
@@ -152,7 +164,9 @@
                 <div class="col-lg-4 info mt-4 mt-lg-0">
                   <i class="bi bi-envelope"></i>
                   <h4>Email:</h4>
-                  <p>info@sevenhillslabs.com</p>
+                  <p>
+                    <a href="mailto:info@sevenhillslabs.com">info@sevenhillslabs.com</a>
+                  </p>
                 </div>
 
                 <div class="col-lg-4 info mt-4 mt-lg-0">
@@ -169,20 +183,21 @@
 
         <div class="row mt-5 justify-content-center" data-aos="fade-up">
           <div class="col-lg-10">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form id="contactForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeJt-QIxczBkfhjhog6ktZyTnPy44Lngq2HC497cZWInglQQQ/formResponse?"
+              target="hidden_iframe" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  <input type="text" class="form-control" name="entry.1893645376" id="entry.1893645376" placeholder="Your Name" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  <input type="email" class="form-control" name="entry.1135209140" id="entry.1135209140" placeholder="Your Email" required>
                 </div>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                <input type="text" class="form-control" name="entry.830110252" id="entry.830110252" placeholder="Subject" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                <textarea class="form-control" name="entry.481712485" id="entry.481712485" rows="5" placeholder="Message" required></textarea>
               </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
@@ -190,7 +205,7 @@
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
               <div class="text-center">
-                <button type="submit">Send Message</button>
+                <button onclick="submitForm" class="btn btn-primary">Send Message</button>
               </div>
             </form>
           </div>
@@ -300,11 +315,19 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script type="text/javascript">
+    $(function () {
+      $('#contactForm').on('submit', function (e) {
+        document.querySelector('.loading').classList.add('d-block');
+        document.querySelector('.error-message').classList.remove('d-block');
+        document.querySelector('.sent-message').classList.remove('d-block');
+      });
+    });
+  </script>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
 </body>
 
 </html>
