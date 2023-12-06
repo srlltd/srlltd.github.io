@@ -1117,9 +1117,8 @@ section {
 .team .member:hover .social {
   opacity: 0;
 }
-
 .team .member.konda .member-img {
-  display: block;
+  display: block !important;
   width: 16%;
   float: left;
   margin: 1%;
